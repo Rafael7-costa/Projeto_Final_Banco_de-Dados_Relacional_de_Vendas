@@ -87,6 +87,8 @@ tbl_filiais ──────────────►  nr_pedido + codigo_pr
 tbl_produtos ──────────────────────────┘
 (codigo_produto PK, nome_produto, marca, preco_unitario)
 ```
+- Diagrama
+![diagrama](img/DB0.png)
 
 **Regras de negócio aplicadas como constraints:**
 - `quantidade` aceita somente valores positivos
