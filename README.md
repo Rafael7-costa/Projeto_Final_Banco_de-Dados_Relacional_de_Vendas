@@ -205,6 +205,7 @@ FROM staging_vendas;
 ---
 
 ### Passo 7 — Integridade referencial
+- Quantidade de registros por tabela
 
 ![Chaves estrangeiras configuradas](img/DB6.png)
 
