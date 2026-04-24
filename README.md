@@ -200,7 +200,7 @@ SELECT nr_pedido, dt_momento, codigo_filial, codigo_cliente, codigo_produto, qua
 FROM staging_vendas;
 ```
 
-![Contagem de registros por tabela após carga](img/DB11_1.png)
+![Contagem de registros por tabela após carga](img/DB11.1.png)
 
 ---
 
