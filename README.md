@@ -13,7 +13,7 @@ A diretoria não conseguia responder perguntas básicas como:
 - Quais produtos lideram as vendas por marca em um período específico?
 - Como as receitas se distribuem entre as regiões do país por filial?
 
-Sem um banco estruturado, cada análise exigia trabalho manual no CSV — lento, sujeito a erro e impossível de escalar.
+Sem um banco estruturado, cada análise exigia trabalho manual no CSV, lento, sujeito a erro e impossível de escalar.
 
 ---
 
@@ -122,7 +122,7 @@ CREATE TABLE staging_vendas (
 );
 ```
 
-![Estrutura da staging_vendas no DBeaver](screenshots/DB1.png)
+![Estrutura da staging_vendas no DBeaver](img/DB1.png)
 
 ---
 
@@ -133,7 +133,7 @@ COPY staging_vendas FROM 'C:/dados/dataset_PA.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',', ENCODING 'UTF8');
 ```
 
-![Preview dos primeiros registros importados](screenshots/DB2.png)
+![Preview dos primeiros registros importados](img/DB2.png)
 
 ---
 
@@ -151,7 +151,7 @@ SELECT
 FROM staging_vendas;
 ```
 
-![Tabelas dimensionais criadas](screenshots/DB3.png)
+![Tabelas dimensionais criadas](img/DB3.png)
 
 ---
 
@@ -177,7 +177,7 @@ CREATE TABLE tbl_pedidos (
 );
 ```
 
-![Constraints aplicadas na tbl_pedidos](screenshots/DB4-5.png)
+![Constraints aplicadas na tbl_pedidos](img/DB4-5.png)
 
 ---
 
@@ -200,13 +200,13 @@ SELECT nr_pedido, dt_momento, codigo_filial, codigo_cliente, codigo_produto, qua
 FROM staging_vendas;
 ```
 
-![Contagem de registros por tabela após carga](screenshots/DB11_1.png)
+![Contagem de registros por tabela após carga](img/DB11_1.png)
 
 ---
 
 ### Passo 7 — Integridade referencial
 
-![Chaves estrangeiras configuradas](screenshots/DB6.png)
+![Chaves estrangeiras configuradas](img/DB6.png)
 
 ---
 
@@ -221,7 +221,7 @@ ORDER BY total_volumes DESC
 LIMIT 5;
 ```
 
-![Resultado top 5 clientes](screenshots/DB7.png)
+![Resultado top 5 clientes](img/DB7.png)
 
 ---
 
@@ -236,7 +236,7 @@ ORDER BY total_volumes DESC
 LIMIT 3;
 ```
 
-![Resultado top 3 produtos](screenshots/DB8.png)
+![Resultado top 3 produtos](img/DB8.png)
 
 ---
 
@@ -255,7 +255,7 @@ GROUP BY pr.marca, pr.nome_produto
 ORDER BY pr.marca, total_vendido DESC;
 ```
 
-![Produto mais vendido por marca](screenshots/DB9.png)
+![Produto mais vendido por marca](img/DB9.png)
 
 ---
 
@@ -286,9 +286,9 @@ GROUP BY f.nome
 ORDER BY f.nome;
 ```
 
-![View criada no banco](screenshots/DB10.png)
+![View criada no banco](img/DB10.png)
 
-![Resultado completo da view pivot](screenshots/DB11.png)
+![Resultado completo da view pivot](img/DB11.png)
 
 ---
 
@@ -313,7 +313,7 @@ GROUP BY f.codigo_filial, f.nome, c.uf
 ORDER BY f.codigo_filial, c.uf;
 ```
 
-![Acumulado por filial e UF](screenshots/DB12.png)
+![Acumulado por filial e UF](img/DB12.png)
 
 ---
 
